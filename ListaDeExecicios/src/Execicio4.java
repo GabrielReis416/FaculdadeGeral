@@ -12,7 +12,7 @@ public class Execicio4 {
 	        
 	       
 	        
-	        // Numero de Dependentes
+	        
 	        
 	        
 	        System.out.print("Numero de Dependentes:  ");
@@ -21,7 +21,7 @@ public class Execicio4 {
 	        
 	       
 	        
-	       // Salario do Funcionario
+	       
 	        
 	        System.out.print("Digite Salario do Funcionario:    ");
 	        int SalarioFun = scanner.nextInt();
@@ -29,7 +29,7 @@ public class Execicio4 {
 	        
 	        
 	        
-	       // Taxa de Imposto 
+	        
 	        
 	        
 	        System.out.print("Taxa de Imposto : ");
@@ -37,7 +37,7 @@ public class Execicio4 {
 	        
 	        
 	        
-	       // Variaveis
+	       
 	        
 	        System.out.println(SalarioMin);
 	        System.out.println(Depedentes);
@@ -45,7 +45,7 @@ public class Execicio4 {
 	        System.out.println(TaxaImposto);
 	        
 	        
-	       // Conta
+	       
 	        
 	        int Alto =  (SalarioMin * 12);
 	        int Medio =  (SalarioMin * 5);
