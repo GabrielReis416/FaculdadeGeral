@@ -19,7 +19,7 @@ def selecionar_todos_dados_tabela(tabela: str):
     cursor.execute(f'SELECT * FROM {tabela};')
     linhas = cursor.fetchall()
     for linha in linhas:
-        print(linha, sep=' - ')
+        print(f'ID: {linha[0]}, Latitude: {linha[1]}, Longitude: {linha[2]}, Local: {linha[3]}')
     print('-' * 100)    
     conn.commit()
     conn.close()
@@ -33,7 +33,7 @@ def inserir_dado_tabela_local():
     if tabela == 'local':
         latitude = float(input('Digite a latitude do local: '))
         longitude = float(input('Digite a longitude do local: '))
-        descricao = float(input('Digite a descrição do local: '))
+        descricao = input('Digite a descrição do local: ')
         cursor.execute(f'''
             INSERT INTO local (latitude, longitude, descricao_local) VALUES
             ({latitude}, {longitude}, '{descricao}')''')
@@ -66,7 +66,7 @@ def inserir_dado_tabela_amostra():
     alcalinidade_parcial = float(input('Digite a alcalinidade_parcial da amostra: '))
     alcalinidade_total = float(input('Digite a alcalinidade_total da amostra: '))
     cursor.execute(f'''
-        INSERT INTO amostra(data, descricao, temperatura, ph, condutividade,turbidez,alcalinidade_parcial, acidez, alcalinidade_total) VALUES
+        INSERT INTO amostra(data, descricao, temperatura, ph, condutividade,turbidez,alcalinidade_parcial, acidez, alcalinidade_total, id_local) VALUES
         ('{data}', '{descricao}', {temperatura}, {ph}, {condutividade},{turbidez},{alcalinidade_parcial}, {acidez}, {alcalinidade_total})''')
     conn.commit()
     conn.close()
@@ -83,7 +83,7 @@ def atualizar_registro(tabela: str):
     id = float(input('Qual [é o ID do registro que você quer editar? : '))
     latitude = float(input('Digite a latitude do local: '))
     longitude = float(input('Digite a longitude do local: '))
-    descricao = float(input('Digite a descrição do local: '))
+    descricao = input('Digite a descrição do local: ')
     cursor.execute(f'''
         UPDATE {tabela} SET latitude = {latitude}, longitude = {longitude}, descricao_local = {descricao} WHERE id = {id}''')
     print(f'{YELLOW}Registro apagado com sucesso!{END}')
@@ -117,9 +117,3 @@ while True:
     elif opcao == '5':
         print('Programa enceerrado.')
         break
-
-        
-
-
-
-    
