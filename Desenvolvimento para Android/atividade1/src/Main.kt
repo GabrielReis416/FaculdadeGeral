@@ -3,6 +3,7 @@ fun main() {
     val missoes = mutableListOf<String>()
     var continuar: String
 
+    // Laço de repetição 
     do {
         println("===== NOVA MISSÃO =====")
         print("Nome do astronauta comandante da missão: ")
@@ -30,11 +31,15 @@ fun main() {
         val custoTotalCombustivel = totalCombustivel * custoLitro
         val totalRefeicoes = numeroTripulantes * mediaRefeicoes * duracao
 
+        // Printar Resultados
+
         println("\n===== RELATÓRIO DA MISSÃO =====")
         println("Comandante: $comandante")
         println("Distância: $distancia milhões de km")
         println("Tripulantes: $numeroTripulantes")
         println("Total de combustível: $totalCombustivel litros")
+
+        // Condicional 
 
         if (totalCombustivel > 20000) {
             println("Alerta: essa missão pode estar além da capacidade atual de combustível!")
